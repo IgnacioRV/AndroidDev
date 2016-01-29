@@ -1,0 +1,28 @@
+package com.nrv.projectyasuo;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.MenuInflater;
+
+public class Sweet extends Activity{
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+	}
+
+	public boolean onCreateOptionsMenu(Menu menu){
+		super.onCreateOptionsMenu((android.view.Menu) menu);
+		MenuInflater awesome; 
+		awesome.inflate(R.menu.main_menu, menu);
+		return true;
+		
+	}
+}

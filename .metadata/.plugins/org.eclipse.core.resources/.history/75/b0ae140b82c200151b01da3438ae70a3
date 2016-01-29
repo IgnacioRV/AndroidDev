@@ -1,0 +1,40 @@
+package com.nrv.projectyasuo;
+
+import android.app.Activity;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+
+public class Menu extends Activity{
+	MediaPlayer song; 
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main2);
+		song = MediaPlayer.create(Menu.this, R.raw.zelda);
+		song.start();
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		song.start();
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		song.pause();
+	}
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		song.release();
+	}
+
+}

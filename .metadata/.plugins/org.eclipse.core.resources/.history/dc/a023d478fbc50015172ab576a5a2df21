@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bwp"
+    android:orientation="vertical" >
+
+	<ScrollView
+	    android:layout_width="match_parent"
+	    android:layout_height="150dp" >
+
+        <Button
+            android:id="@+id/testmenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="TestMenu" />
+
+        <Button
+            android:id="@+id/toast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.24"
+            android:text="Toast" />
+
+        <Button
+            android:id="@+id/sweet_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.24"
+            android:text="SWEET" />
+
+        <Button
+            android:id="@+id/b2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.41"
+            android:text="Resume song" />
+
+        <Button
+            android:id="@+id/b1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.38"
+            android:text="Pause song" />
+
+        <Button
+            android:id="@+id/b3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.39"
+            android:text="MENU" />
+	</ScrollView>
+</LinearLayout>

@@ -1,0 +1,25 @@
+package com.nrv.projectyasuo;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+
+public class TestMenu extends Activity implements OnCheckedChangeListener{
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.adv_screen);
+	}
+
+	@Override
+	public void onCheckedChanged(RadioGroup group, int checkedId) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

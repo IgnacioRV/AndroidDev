@@ -1,0 +1,33 @@
+package com.nrv.projectyasuo;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.TextView;
+
+public class TestMenu extends Activity implements OnCheckedChangeListener{
+	
+	TextView textOut;
+	EditText textIn;
+	RadioGroup gravityG, styleG; 
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.adv_screen);
+		textOut = (TextView) findViewById(R.id.tvNew);
+	}
+
+	@Override
+	public void onCheckedChanged(RadioGroup group, int checkedId) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}
