@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="app_name">ProjectYasuo</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="FirstWords">It's the Javatar!!</string>
-    <string name="button1">SUBMIT</string>
-
-</resources>
