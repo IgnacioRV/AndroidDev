@@ -1,12 +1,10 @@
 package com.nrv.projectyasuo;
 
-import android.R.menu;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class MainActivity extends Activity {
 
@@ -15,22 +13,21 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
 		MediaPlayer song = MediaPlayer.create(MainActivity.this, R.raw.zelda);
-		//song.start();
-		Thread splashTimer = new Thread(){ // Set up a thread
+		// song.start();
+		Thread splashTimer = new Thread() { // Set up a thread
 			public void run() {
-				try{	//first try this
+				try { // first try this
 					sleep(2000);
-					Intent menuIntent = new Intent("com.nrv.projectyasuo.MENU"); 
+					Intent menuIntent = new Intent("com.nrv.projectyasuo.MENU");
 					startActivity(menuIntent);
 				} catch (InterruptedException e) {
-					e.printStackTrace(); //If there's an exception
-				}
-				finally{
+					e.printStackTrace(); // If there's an exception
+				} finally {
 					finish();
 				}
 			}
 		};
-		splashTimer.start();  //run the thread
+		splashTimer.start(); // run the thread
 	}
-	
+
 }
