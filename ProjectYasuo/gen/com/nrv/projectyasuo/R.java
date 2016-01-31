@@ -18,18 +18,33 @@ public final class R {
         public static final int luffy=0x7f020004;
         public static final int minimal=0x7f020005;
         public static final int nostale=0x7f020006;
+        public static final int wp1=0x7f020007;
+        public static final int wp2=0x7f020008;
+        public static final int wp3=0x7f020009;
+        public static final int wp4=0x7f02000a;
+        public static final int yasuo1=0x7f02000b;
+        public static final int yasuo2=0x7f02000c;
+        public static final int yasuo3=0x7f02000d;
     }
     public static final class id {
         public static final int b1=0x7f080011;
         public static final int b2=0x7f080010;
-        public static final int b3=0x7f080012;
+        public static final int b3=0x7f080013;
         public static final int bGen=0x7f080001;
-        public static final int back=0x7f080013;
-        public static final int button1=0x7f080014;
-        public static final int button2=0x7f080015;
+        public static final int back=0x7f080014;
+        public static final int button1=0x7f080015;
+        public static final int button2=0x7f080016;
+        public static final int displayed=0x7f080017;
         public static final int editText1=0x7f080000;
-        public static final int menuSweet=0x7f080016;
-        public static final int menuToast=0x7f080017;
+        public static final int menuSweet=0x7f08001f;
+        public static final int menuToast=0x7f080020;
+        public static final int pic1=0x7f080018;
+        public static final int pic2=0x7f080019;
+        public static final int pic3=0x7f08001a;
+        public static final int pic4=0x7f08001b;
+        public static final int pic5=0x7f08001c;
+        public static final int pic6=0x7f08001d;
+        public static final int pic7=0x7f08001e;
         public static final int rbBold=0x7f08000b;
         public static final int rbCenter=0x7f080006;
         public static final int rbItalic=0x7f08000c;
@@ -44,6 +59,7 @@ public final class R {
         public static final int textView2=0x7f080003;
         public static final int toast=0x7f08000e;
         public static final int tvNew=0x7f080002;
+        public static final int wall=0x7f080012;
     }
     public static final class layout {
         public static final int adv_screen=0x7f030000;
@@ -51,6 +67,7 @@ public final class R {
         public static final int ending=0x7f030002;
         public static final int main2=0x7f030003;
         public static final int splash=0x7f030004;
+        public static final int wallpapers=0x7f030005;
     }
     public static final class menu {
         public static final int main_menu=0x7f070000;
