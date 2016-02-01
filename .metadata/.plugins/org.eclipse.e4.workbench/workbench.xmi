@@ -3,7 +3,7 @@
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MainActivity.java&quot; tooltip=&quot;ProjectYasuo/src/com/nrv/projectyasuo/MainActivity.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/ProjectYasuo/src/com/nrv/projectyasuo/MainActivity.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_qXetUsg2EeWgspdYhMeT4g" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_qtNswsg2EeWgspdYhMeT4g" label="%trimmedwindow.label.eclipseSDK" x="234" y="234" width="1024" height="768">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_qXetUsg2EeWgspdYhMeT4g" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_qtNswsg2EeWgspdYhMeT4g" label="%trimmedwindow.label.eclipseSDK" x="-7" y="0" width="1084" height="1077">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -50,10 +50,11 @@
           <tags>persp.showIn:org.eclipse.ui.navigator.ProjectExplorer</tags>
           <tags>persp.viewSC:org.eclipse.pde.runtime.LogView</tags>
           <tags>persp.perspSC:org.eclipse.wst.xml.ui.perspective</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_q8thUcg2EeWgspdYhMeT4g" selectedElement="_q8thW8g2EeWgspdYhMeT4g" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_q8thUcg2EeWgspdYhMeT4g" selectedElement="_q8thUsg2EeWgspdYhMeT4g" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_q8thUsg2EeWgspdYhMeT4g" containerData="2600" selectedElement="_q8thU8g2EeWgspdYhMeT4g">
               <children xsi:type="basic:PartStack" xmi:id="_q8thU8g2EeWgspdYhMeT4g" elementId="topLeft" containerData="5000" selectedElement="_q8thVMg2EeWgspdYhMeT4g">
                 <tags>org.eclipse.e4.primaryNavigationStack</tags>
+                <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_q8thVMg2EeWgspdYhMeT4g" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_q8mzoMg2EeWgspdYhMeT4g"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_q8thVcg2EeWgspdYhMeT4g" elementId="org.eclipse.ui.views.BookmarkView" toBeRendered="false" ref="_q8oBwMg2EeWgspdYhMeT4g"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_q8thVsg2EeWgspdYhMeT4g" elementId="org.eclipse.ui.views.ResourceNavigator" toBeRendered="false" ref="_q8oBwcg2EeWgspdYhMeT4g"/>
@@ -102,14 +103,11 @@
       <children xsi:type="basic:PartStack" xmi:id="_q8Sqkcg2EeWgspdYhMeT4g" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_tDBGgMg2EeWgspdYhMeT4g">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_tDBGgMg2EeWgspdYhMeT4g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="MainActivity.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MainActivity.java&quot; partName=&quot;MainActivity.java&quot; title=&quot;MainActivity.java&quot; tooltip=&quot;ProjectYasuo/src/com/nrv/projectyasuo/MainActivity.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/ProjectYasuo/src/com/nrv/projectyasuo/MainActivity.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
         </children>
       </children>
     </sharedElements>
@@ -117,6 +115,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.cdt.ui.cview.groupincludes=&quot;false&quot; org.eclipse.cdt.ui.cview.groupmacros=&quot;false&quot; org.eclipse.cdt.ui.editor.CUChildren=&quot;true&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_q90UkMg2EeWgspdYhMeT4g" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -170,7 +170,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_quSq0Mg2EeWgspdYhMeT4g" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_quhUUMg2EeWgspdYhMeT4g" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_qYZTacg2EeWgspdYhMeT4g"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_4Qgn8MhdEeWor5ramQ4Fsg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_qYZTacg2EeWgspdYhMeT4g"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_quSq0cg2EeWgspdYhMeT4g" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -191,7 +191,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_quTR4sg2EeWgspdYhMeT4g" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_qujwkMg2EeWgspdYhMeT4g" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_qYVB78g2EeWgspdYhMeT4g"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_4Qgn-8hdEeWor5ramQ4Fsg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_qYVB78g2EeWgspdYhMeT4g"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_quT48Mg2EeWgspdYhMeT4g" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
