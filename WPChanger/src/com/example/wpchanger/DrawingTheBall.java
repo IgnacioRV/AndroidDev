@@ -1,5 +1,6 @@
 package com.example.wpchanger;
 
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,8 +16,8 @@ public class DrawingTheBall extends View{
 	public DrawingTheBall(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
-		spriteold = BitmapFactory.decodeResource(getResources(), R.drawable.link);
-		sprite = Bitmap.createScaledBitmap(spriteold, 100, 100, false);
+		spriteold = BitmapFactory.decodeResource(getResources(), R.drawable.link); //Load sprite
+		sprite = Bitmap.createScaledBitmap(spriteold, 100, 100, false);			   //Change sprite size
 		x = 0; 
 		y = 0; 
 	}
@@ -35,7 +36,7 @@ public class DrawingTheBall extends View{
 		canvas.drawRect(ourRect, blue); 
 		x += 10 ; 
 		y += 10; 
-		// control that thee sprite doesn't go out of the screen; 
+		// control that the sprite doesn't go out of the screen; 
 		if ( x < canvas.getWidth()) x+=10; 
 		else x = 0;
 		if ( y < canvas.getHeight()) y+=10; 
@@ -44,5 +45,5 @@ public class DrawingTheBall extends View{
 		canvas.drawBitmap(sprite, x, y, new Paint());
 		invalidate();
 	} 
-
+ 
 }

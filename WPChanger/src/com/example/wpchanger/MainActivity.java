@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 
@@ -24,5 +25,7 @@ public class MainActivity extends Activity {
 			startActivity(new Intent ("com.example.wpchanger.MENU"));
 		}
 	});
+	
+	
 	}
 }
