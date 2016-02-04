@@ -11,6 +11,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.Toast;
 
 public class SurfaceViewExample extends Activity implements OnTouchListener {
 
@@ -23,6 +24,7 @@ public class SurfaceViewExample extends Activity implements OnTouchListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+	
 		v = new OurView(this);
 		v.setOnTouchListener(this); // added OnTouchListener
 		oldsprite = BitmapFactory.decodeResource(getResources(), R.drawable.link);
@@ -51,8 +53,8 @@ public class SurfaceViewExample extends Activity implements OnTouchListener {
 
 		Thread t = null;
 		SurfaceHolder holder;
-		boolean isOK = false; //check if thread is running
-		
+		boolean isOK = false; // check if thread is running
+
 		public OurView(Context context) {
 			super(context);
 			holder = getHolder();
@@ -67,17 +69,19 @@ public class SurfaceViewExample extends Activity implements OnTouchListener {
 				if (!holder.getSurface().isValid()) {
 					continue;
 				}
-				link = new Sprite (OurView.this, linkBitmap);
+				link = new Sprite(OurView.this, linkBitmap);
 				Canvas c = holder.lockCanvas();
 				onDraw(c);
 				holder.unlockCanvasAndPost(c);
 			}
 		}
-		protected void onDraw(Canvas canv){
+
+		protected void onDraw(Canvas canv) {
 			canv.drawARGB(255, 255, 133, 51);
 			canv.drawBitmap(sprite, x - (sprite.getWidth() / 2), y - (sprite.getHeight() / 2), null);
 			link.onDraw(canv);
 		}
+
 		public void pause() {
 			isOK = false;
 			while (true) {
@@ -113,14 +117,14 @@ public class SurfaceViewExample extends Activity implements OnTouchListener {
 			y = me.getY();
 			break;
 		case MotionEvent.ACTION_DOWN:
-			x = me.getX();	
+			x = me.getX();
 			y = me.getY();
 			break;
 		case MotionEvent.ACTION_UP:
 			x = me.getX();
 			y = me.getY();
 			break;
-		
+
 		}
 		return false;
 	}
