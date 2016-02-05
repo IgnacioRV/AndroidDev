@@ -18,24 +18,28 @@ import android.widget.Toast;
 public class Game extends Activity implements OnTouchListener {
 
 	GameView v;
-	Bitmap characterBitmapold, characterBitmap;
+	Bitmap characterBitmapold, characterBitmap, ghostO, ghost;
 	SpriteN character;
+	EnemyAI enemy; 
 	float x, y, xSpeed,ySpeed;
 	int score = 0; 
+	boolean first = true; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
-		v = new GameView(this);
+		// Set up the view with OnTouchListener
+		v = new GameView(this);	
 		v.setOnTouchListener(this);
+		//Get bitmaps from /drawable
 		characterBitmapold = BitmapFactory.decodeResource(getResources(), R.drawable.link);
 		characterBitmap = Bitmap.createScaledBitmap(characterBitmapold, 100, 100, false);
+		ghostO = BitmapFactory.decodeResource(getResources(), R.drawable.ghost);
+		ghost = Bitmap.createScaledBitmap(ghostO, 100, 100, false);
 		x = 0;
 		y = 0;
 		xSpeed = ySpeed = 0; 
-
 		setContentView(v);
 
 	}
@@ -54,7 +58,7 @@ public class Game extends Activity implements OnTouchListener {
 		v.resume();
 	}
 
-	public class GameView extends SurfaceView implements Runnable {  //here we draw the screen, to do that we create a thread
+	public class GameView extends SurfaceView implements Runnable {  //here we draw the screen, in order to do that we create a thread
 		Thread t = null; // Set up empty thread
 		SurfaceHolder holder;
 		boolean runs = false; // checks if the thread is running
@@ -68,13 +72,17 @@ public class Game extends Activity implements OnTouchListener {
 		// we create a thread to hold physics etc.
 		@Override
 		public void run() {
+			enemy = new EnemyAI(GameView.this, ghost);
 			// TODO Auto-generated method stub
 			while (runs) {
 				// perform canvas drawing
 				if (!holder.getSurface().isValid()) {
 					continue;
 				}
+				if (first) {
 				character = new SpriteN(GameView.this, characterBitmap);
+				first = false; 
+				}
 				Canvas c = holder.lockCanvas();
 				onDraw(c); // Draw everything
 				holder.unlockCanvasAndPost(c); //Show what we have drawn
@@ -84,16 +92,14 @@ public class Game extends Activity implements OnTouchListener {
 
 		protected void onDraw(Canvas canv) {
 			canv.drawARGB(255, 255, 130, 22);
-			x+=xSpeed; 
-			y+=ySpeed;
-			canv.drawBitmap(characterBitmap, x - (characterBitmap.getWidth() / 2), y + (characterBitmap.getHeight() / 2),
-					null);
-			character.updatePos();
+			//canv.drawBitmap(ghost, x - (characterBitmap.getWidth() / 2), y + (characterBitmap.getHeight() / 2),null);
 			Paint paint = new Paint(); 
 			paint.setColor(Color.BLACK); 
 			paint.setTextSize(50); 
-			canv.drawText("Score: "+Integer.toString(score), 10, 25, paint); 
-			//character.onDraw(canv); // call Sprite's class onDraw method 
+			//Keep track of score on top
+			canv.drawText("Score: "+Integer.toString(score), 30, 30, paint); 
+			character.onDraw(canv); // call Sprite's class onDraw method 
+			enemy.onDraw(canv);
 		}
 		
 		public void pause() {
@@ -120,11 +126,10 @@ public class Game extends Activity implements OnTouchListener {
 	int k = 0; 
 	@Override
 	public boolean onTouch(View v, MotionEvent me) {
-		score++;
+		k++;
 		// TODO Auto-generated method stub
-		Toast t = Toast.makeText(getApplicationContext(), "TOUCHED "+Integer.toString(k)+" TIMES", Toast.LENGTH_LONG);
-		t.show();
 		try {
+			
 			Thread.sleep(50);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -132,14 +137,18 @@ public class Game extends Activity implements OnTouchListener {
 		}
 		float xPress = me.getX();
 		float yPress = me.getY();
-		if (xPress > x)
-			xSpeed = 5;
-		if (xPress < x)
-			xSpeed = -5;
-		if (yPress > y)
-			ySpeed = 5;
-		if (yPress < y)
-			ySpeed = -5;
+		if (xPress > enemy.x) {
+			enemy.xspeed(5);
+		}
+		if (xPress < enemy.x){
+			enemy.xspeed(-5);
+		}
+		if (yPress > enemy.y) {
+			enemy.yspeed(5);
+		}
+		if (yPress < enemy.y){
+			enemy.yspeed(-5);
+		}
 		return false;
 
 	}
