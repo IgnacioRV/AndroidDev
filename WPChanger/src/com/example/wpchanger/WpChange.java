@@ -1,6 +1,11 @@
 package com.example.wpchanger;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,7 +38,7 @@ public class WpChange extends Activity implements OnClickListener{
 
 	}
 	
-
+	int picID;
 	@Override
 	
 	public void onClick(View v) {
@@ -41,16 +46,25 @@ public class WpChange extends Activity implements OnClickListener{
 		switch(v.getId()){
 		case R.id.img1:
 			bigimg.setImageResource(R.drawable.mtg1);
+			picID = R.drawable.mtg1;
 		break;
 		case R.id.img2:
 			bigimg.setImageResource(R.drawable.mtg2);
+			picID = R.drawable.mtg2;
 			break;
 		case R.id.img3:
 			bigimg.setImageResource(R.drawable.mtg3);
+			picID = R.drawable.mtg3;
 			break;
 		case R.id.bigimg:
-			
-			
+			InputStream setImg = getResources().openRawResource(picID);
+			Bitmap pic = BitmapFactory.decodeStream(setImg);
+			try {
+				getApplicationContext().setWallpaper(pic);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			break; 
 		}
 	}
