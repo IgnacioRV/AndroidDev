@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/minimal"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+   >
 
     <ImageView
         android:id="@+id/fig"
@@ -12,15 +13,20 @@
         android:src="@drawable/ic_launcher" />
 
     <Button
-        android:id="@+id/draw"
+        android:id="@+id/wpchange"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Wallpaper Changer" />
 
     <Button
         android:id="@+id/gogame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Game" />
+        android:text="Mini-Game" />
+     <Button
+        android:id="@+id/test1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Random test" />
 
 </LinearLayout>

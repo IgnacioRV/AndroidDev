@@ -49,6 +49,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name=".WpChange"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.example.wpchanger.WPCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Game"
             android:label="@string/app_name" >

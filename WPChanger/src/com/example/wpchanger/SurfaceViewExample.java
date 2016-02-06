@@ -58,7 +58,7 @@ public class SurfaceViewExample extends Activity implements OnTouchListener {
 		public OurView(Context context) {
 			super(context);
 			holder = getHolder();
-			// TODO Auto-generated constructor stub
+			// TODO Auto generated constructor stub
 		}
 
 		@Override
