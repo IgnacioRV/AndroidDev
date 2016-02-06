@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class WpChange extends Activity implements OnClickListener{
 	ImageView bigimg;
@@ -56,7 +57,9 @@ public class WpChange extends Activity implements OnClickListener{
 			bigimg.setImageResource(R.drawable.mtg3);
 			picID = R.drawable.mtg3;
 			break;
-		case R.id.bigimg:
+		case R.id.button1:
+			Toast t = Toast.makeText(getApplicationContext(), "Wallpaper changed", Toast.LENGTH_SHORT);
+			t.show();
 			InputStream setImg = getResources().openRawResource(picID);
 			Bitmap pic = BitmapFactory.decodeStream(setImg);
 			try {
