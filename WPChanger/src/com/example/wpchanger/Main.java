@@ -16,21 +16,22 @@ public class Main extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		Button Draw = (Button) findViewById(R.id.draw);
+		Button Draw = (Button) findViewById(R.id.wpchange);
 		Draw.setOnClickListener(this);
 		ImageView img = (ImageView) findViewById(R.id.fig);
 		img.setOnClickListener(this);
 		Button GoGame = (Button) findViewById(R.id.gogame);
 		GoGame.setOnClickListener(this);
-
+		Button test = (Button) findViewById(R.id.test1);
+		test.setOnClickListener(this);
 	}
 	Toast t;
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.draw:
+		case R.id.wpchange:
 			t = Toast.makeText(this, "Start", Toast.LENGTH_LONG);
 			t.show();
-			startActivity(new Intent("com.example.wpchanger.DRAW"));
+			startActivity(new Intent("com.example.wpchanger.WPCH"));
 			break;
 		case R.id.fig:
 			t = Toast.makeText(this, "Start", Toast.LENGTH_LONG);
@@ -42,6 +43,9 @@ public class Main extends Activity implements OnClickListener {
 			t.show();			
 			startActivity(new Intent("com.example.wpchanger.GAME"));
 			break;
+		case R.id.test1:
+			startActivity(new Intent("com.example.wpchanger.DRAW"));
+		break;
 		}
 
 	}

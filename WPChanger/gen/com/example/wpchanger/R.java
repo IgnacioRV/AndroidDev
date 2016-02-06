@@ -20,26 +20,37 @@ public final class R {
         public static final int link=0x7f020006;
         public static final int luffy=0x7f020007;
         public static final int minimal=0x7f020008;
-        public static final int nostale=0x7f020009;
-        public static final int rightarrow=0x7f02000a;
-        public static final int spritesheet=0x7f02000b;
-        public static final int wp1=0x7f02000c;
-        public static final int wp2=0x7f02000d;
-        public static final int wp3=0x7f02000e;
-        public static final int wp4=0x7f02000f;
-        public static final int yasuo1=0x7f020010;
-        public static final int yasuo2=0x7f020011;
-        public static final int yasuo3=0x7f020012;
+        public static final int mtg1=0x7f020009;
+        public static final int mtg2=0x7f02000a;
+        public static final int mtg3=0x7f02000b;
+        public static final int nostale=0x7f02000c;
+        public static final int rightarrow=0x7f02000d;
+        public static final int spritesheet=0x7f02000e;
+        public static final int wp1=0x7f02000f;
+        public static final int wp2=0x7f020010;
+        public static final int wp3=0x7f020011;
+        public static final int wp4=0x7f020012;
+        public static final int yasuo1=0x7f020013;
+        public static final int yasuo2=0x7f020014;
+        public static final int yasuo3=0x7f020015;
     }
     public static final class id {
-        public static final int draw=0x7f060002;
+        public static final int bigimg=0x7f060005;
+        public static final int button1=0x7f060006;
         public static final int fig=0x7f060001;
         public static final int gogame=0x7f060003;
+        public static final int horizontalScrollView1=0x7f060007;
+        public static final int img1=0x7f060008;
+        public static final int img2=0x7f060009;
+        public static final int img3=0x7f06000a;
         public static final int start=0x7f060000;
+        public static final int test1=0x7f060004;
+        public static final int wpchange=0x7f060002;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int main=0x7f030001;
+        public static final int wpselector=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
