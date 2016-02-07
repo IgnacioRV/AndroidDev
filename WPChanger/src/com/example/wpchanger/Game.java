@@ -20,26 +20,26 @@ public class Game extends Activity implements OnTouchListener {
 	GameView v;
 	Bitmap characterBitmapold, characterBitmap, ghostO, ghost;
 	SpriteN character;
-	EnemyAI enemy; 
-	float x, y, xSpeed,ySpeed;
-	int score = 0; 
-	boolean first = true; 
+	EnemyAI enemy;
+	float x, y, xSpeed, ySpeed;
+	int score = 0;
+	boolean first = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		// Set up the view with OnTouchListener
-		v = new GameView(this);	
+		v = new GameView(this);
 		v.setOnTouchListener(this);
-		//Get bitmaps from /drawable
+		// Get bitmaps from /drawable
 		characterBitmapold = BitmapFactory.decodeResource(getResources(), R.drawable.link);
 		characterBitmap = Bitmap.createScaledBitmap(characterBitmapold, 100, 100, false);
 		ghostO = BitmapFactory.decodeResource(getResources(), R.drawable.ghost);
 		ghost = Bitmap.createScaledBitmap(ghostO, 100, 100, false);
 		x = 0;
 		y = 0;
-		xSpeed = ySpeed = 0; 
+		xSpeed = ySpeed = 0;
 		setContentView(v);
 
 	}
@@ -58,8 +58,15 @@ public class Game extends Activity implements OnTouchListener {
 		v.resume();
 	}
 
-	public class GameView extends SurfaceView implements Runnable {  //here we draw the screen, in order to do that we create a thread
-		Thread t = null; // Set up empty thread
+	public class GameView extends SurfaceView implements Runnable { // here we
+																	// draw the
+																	// screen,
+																	// in order
+																	// to do
+																	// that we
+																	// create a
+																	// thread
+		Thread t = null; // Set up empty thread to hold physics etc.
 		SurfaceHolder holder;
 		boolean runs = false; // checks if the thread is running
 
@@ -69,7 +76,6 @@ public class Game extends Activity implements OnTouchListener {
 			holder = getHolder();
 		}
 
-		// we create a thread to hold physics etc.
 		@Override
 		public void run() {
 			enemy = new EnemyAI(GameView.this, ghost);
@@ -80,28 +86,41 @@ public class Game extends Activity implements OnTouchListener {
 					continue;
 				}
 				if (first) {
-				character = new SpriteN(GameView.this, characterBitmap);
-				first = false; 
+					character = new SpriteN(GameView.this, characterBitmap);
+					first = false;
 				}
 				Canvas c = holder.lockCanvas();
 				onDraw(c); // Draw everything
-				holder.unlockCanvasAndPost(c); //Show what we have drawn
+				holder.unlockCanvasAndPost(c); // Show what we have drawn
+				checkTouch();
 			}
 
 		}
 
+		void checkTouch() {
+			int distx = Math.abs(enemy.x - character.x);
+			int disty = Math.abs(enemy.y - character.y);
+			if ((distx < (enemy.width / 2)) && (disty < (enemy.height) / 2)) {
+				score++;
+				Toast msg = Toast.makeText(getApplicationContext(), "TOUCHED", Toast.LENGTH_LONG);
+				msg.show();
+			}
+		}
+
 		protected void onDraw(Canvas canv) {
+
 			canv.drawARGB(255, 255, 130, 22);
-			//canv.drawBitmap(ghost, x - (characterBitmap.getWidth() / 2), y + (characterBitmap.getHeight() / 2),null);
-			Paint paint = new Paint(); 
-			paint.setColor(Color.BLACK); 
-			paint.setTextSize(50); 
-			//Keep track of score on top
-			canv.drawText("Score: "+Integer.toString(score), 30, 30, paint); 
-			character.onDraw(canv); // call Sprite's class onDraw method 
+			// canv.drawBitmap(ghost, x - (characterBitmap.getWidth() / 2), y +
+			// (characterBitmap.getHeight() / 2),null);
+			Paint paint = new Paint();
+			paint.setColor(Color.BLACK);
+			paint.setTextSize(50);
+			// Keep track of score on top
+			canv.drawText("Score: " + Integer.toString(score), 30, 30, paint);
+			character.onDraw(canv); // call Sprite's class onDraw method
 			enemy.onDraw(canv);
 		}
-		
+
 		public void pause() {
 			runs = false;
 			while (true) {
@@ -123,13 +142,15 @@ public class Game extends Activity implements OnTouchListener {
 		}
 
 	}
-	int k = 0; 
+
+	int k = 0;
+
 	@Override
 	public boolean onTouch(View v, MotionEvent me) {
 		k++;
 		// TODO Auto-generated method stub
 		try {
-			
+
 			Thread.sleep(50);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -140,13 +161,13 @@ public class Game extends Activity implements OnTouchListener {
 		if (xPress > enemy.x) {
 			enemy.xspeed(5);
 		}
-		if (xPress < enemy.x){
+		if (xPress < enemy.x) {
 			enemy.xspeed(-5);
 		}
 		if (yPress > enemy.y) {
 			enemy.yspeed(5);
 		}
-		if (yPress < enemy.y){
+		if (yPress < enemy.y) {
 			enemy.yspeed(-5);
 		}
 		return false;
