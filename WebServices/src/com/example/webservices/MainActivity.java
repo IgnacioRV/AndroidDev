@@ -1,6 +1,7 @@
 package com.example.webservices;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,15 +28,19 @@ public class MainActivity extends Activity implements OnClickListener{
 	
 	@Override
 	public void onClick(View v) {
+		Intent i = new Intent(this, Nums.class); // (Context, class we want to open)
 		switch (v.getId()){
 		case R.id.button1:
 			//width
-			
+			i.putExtra("numbers", "width");
+			startActivityForResult(i, 1);
 			break; 
 
 		case R.id.button2:
 			//height
-			
+
+			i.putExtra("numbers", "height");
+			startActivityForResult(i, 1);
 			break; 
 
 		case R.id.button3:
