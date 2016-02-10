@@ -21,7 +21,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		width = (Button) findViewById(R.id.button1);
 		height = (Button) findViewById(R.id.button2);
 		calc = (Button) findViewById(R.id.button3);
-		area = (Button) findViewById(R.id.textView1);
+		area = (TextView) findViewById(R.id.textView1);
 		width.setOnClickListener(this);
 		height.setOnClickListener(this);
 	}
@@ -38,17 +38,31 @@ public class MainActivity extends Activity implements OnClickListener{
 
 		case R.id.button2:
 			//height
-
 			i.putExtra("numbers", "height");
 			startActivityForResult(i, 1);
 			break; 
 
 		case R.id.button3:
 			//calc
-			
+			int a = Integer.valueOf(width.getText().toString());
+			int b = Integer.valueOf(height.getText().toString());
+			area.setText(a*b+" m ");
 			break; 
 		}
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		if(data.getExtras().containsKey("widthInfo")){
+			width.setText(data.getStringExtra("widthInfo"));
+		}
+		
+		if(data.getExtras().containsKey("heightInfo")){
+			height.setText(data.getStringExtra("heightInfo"));
+		}
 	}
 }

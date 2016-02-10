@@ -31,9 +31,14 @@ public class Nums extends Activity implements OnClickListener {
 		Intent i = getIntent();
 		String msg = i.getStringExtra("numbers");
 		if (msg.contentEquals("height")) {
-
+			i.putExtra("widthInfo", s);
+			setResult(RESULT_OK,i);
+			finish();
 		}
 		if (msg.contentEquals("width")) {
+			i.putExtra("heightInfo", s);
+			setResult(RESULT_OK,i);
+			finish();
 
 		}
 	}
