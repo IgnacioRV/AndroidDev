@@ -18,27 +18,28 @@ public class MainActivity extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		width = (Button) findViewById(R.id.button1);
-		height = (Button) findViewById(R.id.button2);
+		width = (Button) findViewById(R.id.widthButton);
+		height = (Button) findViewById(R.id.heightButton);
 		calc = (Button) findViewById(R.id.button3);
 		area = (TextView) findViewById(R.id.textView1);
 		width.setOnClickListener(this);
 		height.setOnClickListener(this);
+		calc.setOnClickListener(this);
 	}
 	
 	@Override
 	public void onClick(View v) {
 		Intent i = new Intent(this, Nums.class); // (Context, class we want to open)
 		switch (v.getId()){
-		case R.id.button1:
+		case R.id.heightButton:
 			//width
-			i.putExtra("numbers", "width");
+			i.putExtra("numbers", "height");
 			startActivityForResult(i, 1);
 			break; 
 
-		case R.id.button2:
+		case R.id.widthButton:
 			//height
-			i.putExtra("numbers", "height");
+			i.putExtra("numbers", "width");
 			startActivityForResult(i, 1);
 			break; 
 
