@@ -17,6 +17,7 @@ public final class R {
         public static final int zdk=0x7f020003;
     }
     public static final class id {
+        public static final int checkBox1=0x7f060013;
         public static final int comment=0x7f060011;
         public static final int content=0x7f060002;
         public static final int name1=0x7f060004;
@@ -41,6 +42,7 @@ public final class R {
         public static final int activity_main=0x7f030000;
         public static final int addcomment=0x7f030001;
         public static final int mainlayout=0x7f030002;
+        public static final int settings=0x7f030003;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

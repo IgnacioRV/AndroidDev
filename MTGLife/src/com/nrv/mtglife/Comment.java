@@ -17,22 +17,19 @@ public class Comment extends Activity implements OnClickListener{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.addcomment);
-		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-		Editor edit = sp.edit(); 
 		title = (EditText) findViewById(R.id.title);
 		content = (EditText) findViewById(R.id.content);
 		loadPreferences();
 	}
 	
 	void loadPreferences() {
-		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+		SharedPreferences sp = getSharedPreferences("IDvalue",1);
 		title.setText(sp.getString("TITLE", ""));
 		content.setText(sp.getString("CONTENT", ""));
-		finish();
 	}
 
 	void savePreferences() {
-		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+		SharedPreferences sp = getSharedPreferences("IDvalue",1);
 		Editor edit =  sp.edit(); 
 		edit.putString("TITLE", title.getText().toString());
 		edit.putString("CONTENT", content.getText().toString());
@@ -42,7 +39,8 @@ public class Comment extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		
+		savePreferences(); 
+		finish();
 	}
 	
 

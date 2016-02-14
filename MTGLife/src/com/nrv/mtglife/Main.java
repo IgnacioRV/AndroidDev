@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Main extends Activity implements OnClickListener{
 	TextView s1,s2;
@@ -69,7 +70,14 @@ public class Main extends Activity implements OnClickListener{
 			addS2(-5);
 			break; 
 		case R.id.comment: 
+			Toast t = Toast.makeText(this, "Comment", Toast.LENGTH_LONG);
+			t.show();
 			startActivity(new Intent ("com.nrv.mtglife.COMMENT"));
+			break;
+		case R.id.restart: 
+			SharedPreferences sp = getSharedPreferences("IDvalue",1);
+			Toast to = Toast.makeText(this, sp.getString("CONTENT", "COCONUT"), Toast.LENGTH_LONG);
+			to.show();
 			break;
 			//TODO Implement Save, Comment and Settings
 			
